@@ -1,0 +1,16 @@
+c = document.getElementById("can");
+var requestID;
+var x = 0;
+var ctx = c.getContext('2d');
+var toDraw = function(){
+    ctx.clearRect(0,0,500,500);
+    ctx.beginPath();
+    ctx.arc(x,250,50,0, 2 * Math.PI);
+    ctx.fill();
+    x+=.1
+    requestID = window.requestAnimationFrame(toDraw);
+    console.log(requestID);
+};
+
+window.requestAnimationFrame(toDraw);
+
